@@ -67,7 +67,7 @@ class Quadratic:
             c = str(c)
 
         if a == '' and b == '' and c == '': return '0'
-        else: return a+b+c
+        else: yield a+b+c
 
 
     def __sub__(self, other):
@@ -97,7 +97,7 @@ class Quadratic:
             c = str(c)
 
         if a == '' and b == '' and c == '': return '0'
-        else: return a+b+c
+        else: yield a+b+c
 
 
 
@@ -107,8 +107,12 @@ print('Q1 > ',Q1)
 Q2 = Quadratic(6,-10,-7)
 print('Q2 > ',Q2,'\n')
 
-print('Q1 + Q2(Sum) > ',Q1 + Q2)
-print('Q1 - Q2(Difference) > ',Q1 - Q2,'\n')
+addQ1Q2 = Q1 + Q2
+subQ1Q2 = Q1 - Q2
+print('Q1 + Q2(Sum) > ',addQ1Q2)
+print([ i for i in addQ1Q2])
+print('Q1 - Q2(Difference) > ',subQ1Q2)
+print([i for i in subQ1Q2],'\n')
 
 print('Q1 == Q1 ',Q1 == Q1)
 print('Q1 == Q2',Q1 == Q2)
